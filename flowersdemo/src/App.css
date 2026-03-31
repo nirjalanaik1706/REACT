@@ -1,38 +1,229 @@
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  background: #ffffff;   /* ✅ white background */
+  padding: 20px;
+}
+
+.app-header {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.nav-links a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,0.4);
+  border-radius: 4px;
+}
+
+.nav-links a:hover {
+  background: rgba(255,255,255,0.14);
+}
+
+.page-content {
+  background: rgba(255,255,255,0.95);
+  border-radius: 10px;
+  padding: 18px;
+  color: #333;
+}
+
+.page-content h2 {
+  margin-top: 0;
+}
+
+.info-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.info-card {
+  flex: 1;
+  min-width: 220px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.flowers-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flowers-container h1 {
+  text-align: center;
+  color: white;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.flowers-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+  padding: 20px;
+}
+
+.flower-card {
+  background: white;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+}
+
+.flower-img {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 14px;
+}
+
+.flower-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+}
+
+.flower-image {
+  font-size: 4rem;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.flower-name {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.flower-description {
+  color: #666;
+  font-size: 0.95rem;
+  margin: 10px 0;
+  text-align: center;
+  flex-grow: 1;
+}
+
+.flower-details {
+  background: #f5f5f5;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+  font-size: 0.9rem;
+}
+
+.flower-details p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.counter {
+  background: #fff3e0;
+  border-radius: 8px;
+  padding: 12px;
+  margin: 15px 0;
+  text-align: center;
+}
+
+.counter-display {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #e91e63;
+  margin: 0 0 8px 0;
+}
+
+.counter-buttons {
+  display: flex;
+  gap: 8px;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-increment {
+  background-color: #4CAF50;
   color: white;
+  flex: 1;
 }
 
-.App-link {
-  color: #61dafb;
+.btn-increment:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-decrement {
+  background-color: #f44336;
+  color: white;
+  flex: 1;
+}
+
+.btn-decrement:hover:not(:disabled) {
+  background-color: #da190b;
+  transform: scale(1.05);
+}
+
+.btn-decrement:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+.btn-cart {
+  width: 100%;
+  background-color: #2196F3;
+  color: white;
+  padding: 12px 20px;
+  font-weight: bold;
+}
+
+.btn-cart:hover {
+  background-color: #0b7dda;
+  transform: scale(1.02);
+}
+
+@media (max-width: 768px) {
+  .flowers-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   }
-  to {
-    transform: rotate(360deg);
+
+  .flowers-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .counter-buttons {
+    flex-direction: column;
+  }
+
+  .btn-increment,
+  .btn-decrement {
+    width: 100%;
   }
 }

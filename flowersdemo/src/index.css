@@ -11,3 +11,60 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* ✅ Add this */
+  background-color: #f2f2f2;
+}
+
+/* Navbar / Header */
+h1 {
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Links styling */
+a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Product Card UI */
+.product-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.product-card {
+  background: #ffffff;
+  border: 1px solid #ddd;   /* light border */
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+}
+
+.product-image {
+  width: 150px;
+  margin: 10px 0;
+}
+
+/* Button */
+button {
+  padding: 6px 10px;
+  background-color: #073957;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: black;
+}
