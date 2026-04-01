@@ -3,13 +3,22 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';  
 import List from './List';
+import Hello from './Hello';
+import GoodBye from './GoodBye';
+
 
 function App() {
   return (
     <Router>
-      <div className="App">
-        <BasicRouting />
-      </div>
+      
+       <Routes>
+        {/*  */}
+         <Route exact path="/" element={<Hello />} />
+         <Route path="/goodbye" element={<GoodBye />} /> 
+         <Route path="/Login" element={<Login/>} />
+       </Routes>
+        {/* <Basi  cRouting /> */}
+      
     </Router>
   );
 }

@@ -16,7 +16,8 @@ class Product extends React.Component {
     render() {
         return (
             <div className="text-center">
-                <h2>Flower Details</h2>
+                <h2>Flower Details</h2> 
+
                     <p><b>Title:</b> {this.props.title}</p>
                     <img src={this.props.imageurl} alt="flower"/>
                     <p><b>Description:</b> {this.props.description}</p>
@@ -32,3 +33,5 @@ class Product extends React.Component {
 }
 
 export default Product;
+
+
