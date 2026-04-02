@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "customer": "IBM",
+        "orderdate": "12/08/2026",
+        "Amount": 60000
+    },
+    {
+        "id": 1,
+        "customer": "IBM",
+        "orderdate": "12/08/2026",
+        "Amount": 60000
+    },
+    {
+        "id": 1,
+        "customer": "IBM",
+        "orderdate": "12/08/2026",
+        "Amount": 60000
+    },
+    {
+        "id": 1,
+        "customer": "IBM",
+        "orderdate": "12/08/2026",
+        "Amount": 60000
+    }
+]
+

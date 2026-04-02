@@ -1,24 +1,19 @@
 import './App.css';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
-import Login from './Login';
-import Register from './Register';  
-import List from './List';
-import Hello from './Hello';
-import GoodBye from './GoodBye';
+import Login from './Membership/Login';
+import Register from './Membership/Register';
+import List from './ProductCatlog/List';
+import Hello from './Layout/Hello';
+import GoodBye from './Layout/GoodBye';
+import Orders from './OrderProcessing/Orders';
+import Cart from './ShoppingCart/Cart';
 
 
 function App() {
   return (
     <Router>
-      
-       <Routes>
-        {/*  */}
-         <Route exact path="/" element={<Hello />} />
-         <Route path="/goodbye" element={<GoodBye />} /> 
-         <Route path="/Login" element={<Login/>} />
-       </Routes>
-        {/* <Basi  cRouting /> */}
-      
+      <BasicRouting />
+
     </Router>
   );
 }
@@ -28,22 +23,32 @@ function BasicRouting() {
     <div className='text-center'>
       <h1>Transflower Store</h1>
 
-      <Link to="/Home">Home</Link> | 
-      <Link to="/About">About us</Link> | 
-      <Link to="/Contact">Contact</Link> | 
-      <Link to="/Flowers">Flowers</Link> | 
-      <Link to="/Login">Login</Link> | 
-      <Link to="/Register">Register</Link>
+      <Link to="/Home">Home</Link> |
+      <Link to="/About">About us</Link> |
+      <Link to="/Contact">Contact</Link> |
+      <Link to="/Flowers">Flowers</Link> |
+      <Link to="/Login">Login</Link> |
+      <Link to="/Register">Register</Link>|
+      <Link to="/orders">Orders</Link>|
+      <Link to="/hello">Hello</Link>|
+      <Link to="/cart">Shopping Cart</Link>|
+
 
       <hr />
 
       <Routes>
         <Route path="/Home" element={<Home />} />
+        <Route path="/orders" element={<Orders />} />
         <Route path="/About" element={<About />} />
         <Route path="/Contact" element={<Contact />} />
         <Route path="/Flowers" element={<List />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/Register" element={<Register />} />
+        <Route path="/goodbye" element={<GoodBye />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route exact path="/hello" element={<Hello />} />
+
       </Routes>
     </div>
   );

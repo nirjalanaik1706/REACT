@@ -3,7 +3,7 @@
     "id": 1,
     "title": "Gerbera",
     "description": "Wedding Flower",
-    "imageurl": "./gerbera.png",
+    "imageurl": "./images/gerbera.png",
     "unitprice": 500,
     "likes": 45
   },
@@ -11,15 +11,15 @@
     "id": 2,
     "title": "Rose",
     "description": "Valentine's Day Flower",
-    "imageurl": "./",
+    "imageurl": "./images/rose.png",
     "unitprice": 300,
     "likes": 60
   },
     {
         "id": 3,
-        "title": "Lily",
+        "title": "Sunflower",
         "description": "Funeral Flower",
-        "imageurl": "./",
+        "imageurl": "./images/sunflower.png",
         "unitprice": 400,
         "likes": 30
     }
