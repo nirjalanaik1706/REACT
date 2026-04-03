@@ -7,12 +7,18 @@ function Item(props) {
     const [quantity, setQuantity] = useState(props.quantity);
 
     return (
+         
         <div className="text-center">
-            <h2>Item Details</h2> 
+           
 
             <p><b>Title:</b> {props.title}</p>
             <img src={props.imageurl} alt="item"style={{ width: "200px", height: "200px" }}/>
             <p><b>Quantity :</b> {quantity}</p>
+            <input type="button">-</input>
+            <input type="text" value={props.quantity} readOnly />
+           
+
+
             <p><b>Unit Price:</b> {props.unitprice}</p>
             <p><b>Amount:</b> {props.unitprice * quantity} Rs.</p>    
 

@@ -1,26 +1,85 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 
-class Register extends React.Component {
-    render() {
-        return (
-            <div>
-                <h2>Register</h2>
-                <form>
-                    <label>
-                        Username:
-                        <input type="text" name="username" />
-                    </label>
-                    <br />
-                    <label>
-                        Password:
-                        <input type="password" name="password" />
-                    </label>
-                    <br />
-                    <button type="submit">Register</button>
-                </form>
-            </div>
-        );
-    }
+function Register() {
+
+    const navigate=useNavigate();
+
+    const [firstname, setFirstname] = useState("Nirjala");
+    const [lastname, setLastname] = useState("Naik");
+    const [email, setEmail] = useState("nirjalanaik@gmail.com");
+    const [password, setPassword] = useState("12345");
+    const [contactnumber, setContactnumber] = useState("7972520102");
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        navigate("/Login");
+
+        const user = {
+            firstname,
+            lastname,
+            email,
+            password,
+            contactnumber
+        };
+
+        console.log(user);
+    };
+
+    return (
+        <div>
+            <h3>New Customer Registration</h3>
+
+            <form onSubmit={handleSubmit}>
+
+                <label>First Name:</label>
+                <input
+                    type="text"
+                    value={firstname}
+                    onChange={(event) => setFirstname(event.target.value)}
+                />
+                <br /><br />
+
+                <label>Last Name:</label>
+                <input
+                    type="text"
+                    value={lastname}
+                    onChange={(event) => setLastname(event.target.value)}
+                />
+                <br /><br />
+
+                <label>Email:</label>
+                <input
+                    type="email"
+                    value={email}
+                    onChange={(event) => setEmail(event.target.value)}
+                />
+                <br /><br />
+
+
+                <label>Contact Number:</label>
+                <input
+                    type="text"
+                    value={contactnumber}
+                    onChange={(event) => setContactnumber(event.target.value)}
+                />
+                <br /><br />
+
+
+                <label>Password:</label>
+                <input
+                    type="password"
+                    value={password}
+                    onChange={(event) => setPassword(event.target.value)}
+                />
+                <br /><br />
+
+
+
+                <button type="submit" onClick={handleSubmit}>Submit</button>
+            </form>
+        </div>
+    );
 }
 
 export default Register;

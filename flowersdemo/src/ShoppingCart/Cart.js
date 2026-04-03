@@ -8,6 +8,7 @@ class Cart extends React.Component {
 
         return (
             <div className="text-center">
+                <h2>Item Details</h2> 
                 {
                     cartitems.map(item => (
                         <Item

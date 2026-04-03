@@ -1,23 +1,23 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 
-const GoodBye=()=> {
+const GoodBye = () => {
 
-    const navigate=useNavigate();
+    const navigate = useNavigate();
 
-    const handleClickBye=()=>{
+    const handleClickBye = () => {
         console.log("Goodbye clickd");
         navigate('/');
 
-       
+
     }
-        return (
-            <div className="text-center">
-                <h3>Thank you for accepting me as your Mentor</h3>
-                <button onClick={handleClickBye}>Hello</button>
-                <br />
-            </div>
-        );
-    }
+    return (
+        <div className="text-center">
+            <h3>Thank you for accepting me as your Mentor</h3>
+            <button onClick={handleClickBye}>Hello</button>
+            <br />
+        </div>
+    );
+}
 
 export default GoodBye;
