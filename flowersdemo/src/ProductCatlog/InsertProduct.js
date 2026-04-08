@@ -1,51 +1,56 @@
 import React, { useState } from "react";
 
-function UpdateProduct() {
+function InsertProduct() {
+
     const [id, setId] = useState("");
     const [title, settitle] = useState("");
     const [description, setdescription] = useState("");
-    const [unitprice, setUnitprice] = useState("")
-    const [likes, setLikes] = useState("");
+    const[unitprice,setUnitprice]=useState("")
+    const[likes,setLikes]=useState("");
+    const[imageurl,setImageurl]=useState("");
     const [message, setMessage] = useState("");
 
-    const handleUpdate = () => {
-        if (!id || !title || !description || !unitprice || !likes) {
+    const handleInsert = () => {
+        if (!id || !title || !description|| !unitprice ||!likes ) {
             setMessage("Please fill all fields");
             return;
         }
 
-        fetch(`http://localhost:7777/products/${id}`, {
-            method: "PUT",
+        fetch("http://localhost:7777/products", {
+            method: "POST",
             headers: {
                 "Content-Type": "application/json"
             },
             body: JSON.stringify({
-                title: title,
+                id:id,
+                title:title,
                 description: description,
-                unitprice: unitprice,
-                likes: likes
+                imageurl:imageurl,
+                unitprice:unitprice,
+                likes:likes
             })
         })
-            .then(response => {
-                if (response.ok) {
-                    setMessage("Product updated successfully");
-                    setId("");
-                    settitle("");
-                    setdescription("");
-                    setUnitprice("");
-                    setLikes("");
-                } else {
-                    setMessage("Product not found");
-                }
-            })
-            .catch(() => {
-                setMessage("Error updating product");
-            });
+        .then(response => {
+            if (response.ok) {
+                setMessage("Product added successfully");
+                setId("");
+                settitle("");
+                setdescription("");
+                setImageurl("");
+                setUnitprice("");
+                setLikes("");
+            } else {
+                setMessage("Product not added");
+            }
+        })
+        .catch(() => {
+            setMessage("Error added product");
+        });
     };
 
     return (
         <div className="text-center">
-            <h3>Update Product</h3>
+            <h3>Add Product</h3>
 
             <input
                 type="text"
@@ -73,6 +78,14 @@ function UpdateProduct() {
 
             <input
                 type="text"
+                placeholder="Enter New Imageurl"
+                value={imageurl}
+                onChange={(e) => setImageurl(e.target.value)}
+            />
+            <br /><br />
+
+            <input
+                type="text"
                 placeholder="Enter New unitprice"
                 value={unitprice}
                 onChange={(e) => setUnitprice(e.target.value)}
@@ -89,8 +102,8 @@ function UpdateProduct() {
 
 
 
-            <button onClick={handleUpdate}>
-                Update
+            <button onClick={handleInsert}>
+                Insert
             </button>
 
             <p>{message}</p>
@@ -98,4 +111,4 @@ function UpdateProduct() {
     );
 }
 
-export default UpdateProduct;
+export default InsertProduct;

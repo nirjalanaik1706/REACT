@@ -7,9 +7,9 @@ class Product extends React.Component {
     constructor(props) {
         super(props);
         this.state={likes:props.likes};
-        this.handler=this.handler.bind(this);
+        this.handler=this.newHandler.bind(this);
     }
-    handler(data){
+    newHandler(data){
         this.setState({likes:data});
 
     }
